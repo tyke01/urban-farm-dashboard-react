@@ -19,7 +19,7 @@ import {
   Minerals,
   Progress,
   Weather,
-  Water
+  Water,
 } from "./pages";
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
                 <button
                   type="button"
                   className="text-3xl p-2 hover:drop-shadow-xl hover:bg-light-gray text-white  rounded-full"
-                  style={{ background: currentColor }}
+                  style={{ background: currentColor, zIndex: "9999" }}
                   onClick={() => setThemeSettings(true)}
                 >
                   <FiSettings />
@@ -47,7 +47,10 @@ function App() {
             {/*  */}
 
             {activeMenu ? (
-              <div className="w-72 fixed sidebar bg-white dark:bg-dark2-bg">
+              <div
+                className="w-72 fixed sidebar bg-white dark:bg-dark2-bg"
+                style={{ zIndex: "999" }}
+              >
                 <Sidebar />
               </div>
             ) : (
@@ -61,7 +64,10 @@ function App() {
                 activeMenu ? "md:ml-72" : "flex-2"
               }`}
             >
-              <div className="fixed top-0 md:static bg-main-bg dark:bg-dark2-bg">
+              <div
+                className="fixed top-0 md:static bg-main-bg dark:bg-dark2-bg w-full"
+                style={{ position: "fixed", zIndex: "999" }}
+              >
                 <Navbar />
               </div>
 
@@ -86,7 +92,6 @@ function App() {
                   <Route path="/market" element={<Market />} />
                   <Route path="/community" element={<Community />} />
                   <Route path="/weather" element={<Weather />} />
-
                 </Routes>
               </div>
             </div>

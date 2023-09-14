@@ -9,7 +9,7 @@ const ThemeSettings = () => {
     UseStateContext();
 
   return (
-    <div className="bg-half-transparent w-[400px] fixed nav-item bottom-4 left-4 rounded-xl">
+    <div className="bg-half-transparent w-[400px] fixed nav-item bottom-4 left-4 rounded-xl" style={{zIndex:"9999"}}>
       <div className=" h-[400px] dark:text-gray-200 bg-white dark:bg-[#484b52] w-400 rounded-xl">
 
         <div className="flex justify-between items-center p-4 ml-4">
